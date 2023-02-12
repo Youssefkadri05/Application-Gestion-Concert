@@ -1,13 +1,18 @@
 package dao;
 
-import gestion_concert.TGroupeGrp;
-import concertDAO.*;
+
+import gestion_concert.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 
+import concertDAO.DAO;
+import concertDAO.DAOException;
+import concertDAO.SQLConnection;
+
 /**
- * DAO pour la classe/table Administrateur
+ * DAO pour la classe/table Ticket avec implémentation en JDBC.
+ * @author Eric
  */
 class DAO_Admin extends DAO<TAdminstrateurAdm> {
 
@@ -23,8 +28,8 @@ class DAO_Admin extends DAO<TAdminstrateurAdm> {
         try {
             Statement req = connection.createStatement();
             req = connection.createStatement();
-            int nb = req.executeUpdate("insert into t_adminstrateur_adm values "
-            		+ "(" + admin() + " , '" + groupe.getGrpNom() +")");
+            int nb = req.executeUpdate("insert into t_administrateur_adm values "
+            		+ "(" + admin.getAdmId() + " , '" + admin.getAdmNom() + "' , '" + admin.getAdmPrenom() +"' , " + admin.getAdmEmail() +"' , " + admin.getAdmMotDePasse() +")");
         } catch (Exception e) {
             throw new DAOException("Problème technique (" + e.getMessage() + ")");
         }
@@ -33,8 +38,8 @@ class DAO_Admin extends DAO<TAdminstrateurAdm> {
     @Override
     public void update(TAdminstrateurAdm admin) throws DAOException {
         try {
-            PreparedStatement reqParam = connection.prepareStatement("update t_groupe_grp set grp_nom = "+groupe.getGrpNom()+" where grp_id = ?");
-            reqParam.setInt(1, groupe.getGrpId());
+            PreparedStatement reqParam = connection.prepareStatement("update t_administrateur_adm set adm_mot_de_passe = "+admin.getAdmMotDePasse()+" where adm_id = ?");
+            reqParam.setInt(1, admin.getAdmId());
             reqParam.executeUpdate();
         } catch (Exception e) {
             throw new DAOException("Problème technique (" + e.getMessage() + ")");
@@ -42,10 +47,10 @@ class DAO_Admin extends DAO<TAdminstrateurAdm> {
     }
 
     @Override
-    public void delete(TAdminstrateur admin) throws DAOException {
+    public void delete(TAdminstrateurAdm admin) throws DAOException {
         try {
-            PreparedStatement reqParam = connection.prepareStatement("delete from t_groupe_grp where grp_id = ?");
-            reqParam.setInt(1, groupe.getGrpId());
+            PreparedStatement reqParam = connection.prepareStatement("delete from t_administrateur_adm where adm_id = ?");
+            reqParam.setInt(1, admin.getAdmId());
             reqParam.executeUpdate();
 
         
@@ -54,28 +59,8 @@ class DAO_Admin extends DAO<TAdminstrateurAdm> {
         }
     }
 
-    public DAO_Groupe() throws DAOException {
+    public DAO_Admin() throws DAOException {
     	super();
         this.connection = SQLConnection.getConnection();
     }
-
-	@Override
-	public void create(TAdminstrateur data) throws DAOException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void update(TAdminstrateur data) throws DAOException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete(TAdminstrateur data) throws DAOException {
-		// TODO Auto-generated method stub
-		
-	}
-
-
 }
