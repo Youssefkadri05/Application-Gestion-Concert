@@ -128,7 +128,7 @@ public class TTicketTic implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mycompany.concert.TTicketTic[ ticId=" + ticId + " ]";
+        return "gestion_concert.TTicketTic[ ticId=" + ticId + " ]";
     }
     
 }
