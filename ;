@@ -1,0 +1,18 @@
+Préparation du projet
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	new file:   .classpath
+#	new file:   .project
+#	new file:   .settings/org.eclipse.jdt.core.prefs
+#	new file:   .settings/org.eclipse.m2e.core.prefs
+#	new file:   pom.xml
+#	new file:   target/classes/META-INF/MANIFEST.MF
+#	new file:   target/classes/META-INF/maven/KAA/KAA/pom.properties
+#	new file:   target/classes/META-INF/maven/KAA/KAA/pom.xml
+#
