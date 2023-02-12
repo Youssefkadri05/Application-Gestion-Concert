@@ -2,11 +2,19 @@
 <persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 <persistence-unit name="SportsPU" transaction-type="RESOURCE_LOCAL">
 <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
 <!--<class>data.Sport</class>  -->
+<class>gestion_concert.TAdminstrateurAdm</class>
+<class>gestion_concert.TArtisteArt</class>
+<class>gestion_concert.TConcertCon</class>
+<class>gestion_concert.TGroupeGrp</class>
+<class>gestion_concert.TSalleSal</class>
+<class>gestion_concert.TSoireeSoi</class>
+<class>gestion_concert.TTicketTic</class>
 <properties>
-<property name="javax.persistence.jdbc.url" value="URL"/>
-<property name="javax.persistence.jdbc.user" value="LOGIN"/>
-<property name="javax.persistence.jdbc.password" value="MDP"/>
+<property name="javax.persistence.jdbc.url" value="jdbc:mariadb://obiwan.univ-brest.fr:3306/zfm1-zamriib00_2"/>
+<property name="javax.persistence.jdbc.user" value="zamriib00"/>
+<property name="javax.persistence.jdbc.password" value="rlt78wjy"/>
 <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
 <property name="hibernate.show_sql" value="true" />
 </properties>
