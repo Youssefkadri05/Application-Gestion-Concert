@@ -6,9 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 
-import concertDAO.DAO;
-import concertDAO.DAOException;
-import concertDAO.SQLConnection;
+
 
 /**
  * DAO pour la classe/table Ticket avec implémentation en JDBC.
