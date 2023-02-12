@@ -4,7 +4,6 @@
   <artifactId>KAA</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <description>KADRI AMRI ABADA</description>
-  
   <dependencies>
 <dependency>
 <groupId>org.mariadb.jdbc</groupId>
