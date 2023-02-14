@@ -41,5 +41,10 @@
 <artifactId>hibernate-core</artifactId>
 <version>5.4.21.Final</version>
 </dependency>
+<dependency>
+<groupId>org.mongodb</groupId>
+<artifactId>mongodb-driver-sync</artifactId>
+<version>4.8.2</version>
+</dependency>
 </dependencies>
 </project>
