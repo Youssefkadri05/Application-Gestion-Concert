@@ -3,6 +3,14 @@ package dao_gestion_concert;
 import jpa_gestion_concert.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.bson.types.ObjectId;
+
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.Sorts;
 public class DAO_Photo {
 
     private final MongoCollection<Photo> collection;
